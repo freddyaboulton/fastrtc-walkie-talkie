@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fastrtc_walkie_talkie"
+dynamic = ["version"]
+description = 'FastRTC Turn Detection Algorithm that works like a walkie talkie. Finish your turn when you say "over".'
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Freddy Boulton", email = "not-my-email@domain.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  'Programming Language :: Python :: 3',
+  'Programming Language :: Python :: 3 :: Only',
+  'Programming Language :: Python :: 3.10',
+  'Programming Language :: Python :: 3.11',
+  'Programming Language :: Python :: 3.12',
+  'Programming Language :: Python :: 3.13',
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = ["fastrtc[vad, stt]>=0.0.15"]
+
+[project.urls]
+Documentation = "https://github.com/Freddy Boulton/fastrtc-walkie-talkie#readme"
+Issues = "https://github.com/Freddy Boulton/fastrtc-walkie-talkie/issues"
+Source = "https://github.com/Freddy Boulton/fastrtc-walkie-talkie"
+
+[tool.hatch.version]
+path = "src/fastrtc_walkie_talkie/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/fastrtc_walkie_talkie tests}"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fastrtc_walkie_talkie"]
+
+[tool.coverage.run]
+source_pkgs = ["src/fastrtc_walkie_talkie", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/fastrtc_walkie_talkie/__about__.py",
+]
+
+[tool.coverage.paths]
+walkie_talkie = ["src/fastrtc_walkie_talkie"]
+tests = ["tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
