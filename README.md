@@ -1,4 +1,4 @@
-# ReplyOnOver FastRTC
+# FastRTC Walkie Talkie
 
 [![PyPI - Version](https://img.shields.io/pypi/v/fastrtc-walkie-talkie.svg)](https://pypi.org/project/fastrtc-walkie-talkie)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fastrtc-walkie-talkie.svg)](https://pypi.org/project/fastrtc-walkie-talkie)
